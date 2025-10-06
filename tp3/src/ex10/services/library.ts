@@ -2,7 +2,11 @@ import { Book } from "../models/book";
 import { Repository } from "../utils/repository";
 
 export class Library {
-  constructor(public booksRepo: Repository<Book>) {}
+   public booksRepo: Repository<Book>;
+
+  constructor(booksRepo: Repository<Book>) {
+    this.booksRepo = booksRepo;
+  }
 
   addBook(book: Book): void {
     this.booksRepo.add(book);
@@ -30,3 +34,4 @@ export class Library {
     if (book) book.available = true;
   }
 }
+
