@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    // Dossiers source et compilation
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Module et target
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Librairies et types Node
+    "lib": ["ESNext"],        // inclut Promise, console, etc.
+    "types": ["node"],        // inclut les types Node.js
+
+    // Génération de fichiers et débogage
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Type checking strict
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    // Modules & JSX
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+
+    // Pour éviter l’erreur de syntaxe des modules
+    "verbatimModuleSyntax": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
