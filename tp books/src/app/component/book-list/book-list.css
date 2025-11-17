@@ -1,0 +1,50 @@
+/* Tableau */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Boutons d'action */
+button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+button.edit {
+  background-color: #2196F3;
+}
+
+button.edit:hover {
+  background-color: #0b7dda;
+}
+
+button.delete {
+  background-color: #f44336;
+}
+
+button.delete:hover {
+  background-color: #da190b;
+}

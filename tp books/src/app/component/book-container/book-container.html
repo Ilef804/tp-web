@@ -1,0 +1,25 @@
+<p>Book Container works!</p>
+
+<!-- Champ de recherche -->
+<input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher un livre">
+
+<!-- Boutons de tri -->
+<button (click)="sortKey='category'">Trier par catégorie</button>
+<button (click)="sortKey='isAvailable'">Trier par disponibilité</button>
+
+<!-- Compteur dynamique -->
+<p>Total livres : {{ filteredBooks.length }}</p>
+
+<!-- Formulaire pour ajouter / éditer un livre -->
+<app-book-form
+  [bookToEdit]="bookToEdit"
+  (addBook)="onAddBook($event)">
+</app-book-form>
+
+<!-- Liste de livres -->
+<app-book-list
+  [books]="sortedBooks"
+  [categories]="categories"
+  (deleteBook)="onDeleteBook($event)"
+  (editBook)="onEditBook($event)">
+</app-book-list>

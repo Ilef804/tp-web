@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Auteur</th>
+      <th>Catégorie</th>
+      <th>Disponible</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books; trackBy: trackById">
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.category }}</td>
+      <td>{{ book.isAvailable ? 'Oui' : 'Non' }}</td>
+      <td>
+        <button (click)="onEdit(book)">Éditer</button>
+        <button (click)="onDelete(book.id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

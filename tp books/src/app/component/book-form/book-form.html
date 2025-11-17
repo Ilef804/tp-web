@@ -1,0 +1,86 @@
+<form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)" novalidate>
+
+  <!-- Title -->
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required pattern=".*[a-zA-Z].*" minlength="3"
+           [(ngModel)]="title" #titleRef="ngModel">
+    <div *ngIf="titleRef.invalid && titleRef.dirty" class="error-msg">
+      <small *ngIf="titleRef.errors?.['required']">Title is required.</small>
+      <small *ngIf="titleRef.errors?.['minlength']">Title must be at least 3 characters.</small>
+    </div>
+  </div>
+
+  <!-- Author -->
+  <div>
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" required minlength="3"
+           [(ngModel)]="author" #authorRef="ngModel">
+    <div *ngIf="authorRef.invalid && authorRef.dirty" class="error-msg">
+      <small *ngIf="authorRef.errors?.['required']">Author is required.</small>
+      <small *ngIf="authorRef.errors?.['minlength']">Author must be at least 3 characters.</small>
+    </div>
+  </div>
+
+  <!-- Publisher Email -->
+  <div>
+    <label for="publisherEmail">Publisher Email:</label>
+    <input type="email" id="publisherEmail" name="publisherEmail" required
+           [(ngModel)]="publisherEmail" #emailRef="ngModel">
+    <div *ngIf="emailRef.invalid && emailRef.dirty" class="error-msg">
+      <small *ngIf="emailRef.errors?.['required']">Email is required.</small>
+      <small *ngIf="emailRef.errors?.['email']">Invalid email format.</small>
+    </div>
+  </div>
+
+  <!-- Publisher Phone -->
+  <div>
+    <label for="publisherPhone">Publisher Phone:</label>
+    <input type="text" id="publisherPhone" name="publisherPhone"
+           pattern="^[0-9]{8}$" [(ngModel)]="publisherPhone" #phoneRef="ngModel">
+    <div *ngIf="phoneRef.invalid && phoneRef.dirty" class="error-msg">
+      <small *ngIf="phoneRef.errors?.['pattern']">Phone must be 8 digits.</small>
+    </div>
+  </div>
+
+  <!-- Release Date -->
+  <div>
+    <label for="releaseDate">Release Date:</label>
+    <input type="number" id="releaseDate" name="releaseDate" required min="1900"
+           [(ngModel)]="releaseDate" #dateRef="ngModel">
+    <div *ngIf="dateRef.invalid && dateRef.dirty" class="error-msg">
+      <small *ngIf="dateRef.errors?.['required']">Release date is required.</small>
+      <small *ngIf="dateRef.errors?.['min']">Release year must be greater than 1900.</small>
+    </div>
+  </div>
+
+  <!-- Category -->
+  <div>
+    <label for="category">Category:</label>
+    <select id="category" name="category" required [(ngModel)]="category" #catRef="ngModel">
+      <option value="" disabled selected>Select a category</option>
+      <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+    </select>
+    <div *ngIf="catRef.invalid && catRef.dirty" class="error-msg">
+      <small *ngIf="catRef.errors?.['required']">Category is required.</small>
+    </div>
+  </div>
+
+  <!-- Is Available -->
+  <div>
+    <label for="isAvailable">Available:</label>
+    <input type="checkbox" id="isAvailable" name="isAvailable" [(ngModel)]="isAvailable">
+  </div>
+
+  <!-- Stock -->
+  <div>
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" min="0"
+           [(ngModel)]="stock" #stockRef="ngModel">
+    <div *ngIf="stockRef.invalid && stockRef.dirty" class="error-msg">
+      <small *ngIf="stockRef.errors?.['min']">Stock cannot be negative.</small>
+    </div>
+  </div>
+
+  <button type="submit">{{ bookToEdit ? 'Mettre à jour' : 'Ajouter' }}</button>
+</form>
