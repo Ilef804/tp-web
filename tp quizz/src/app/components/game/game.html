@@ -1,0 +1,24 @@
+<div *ngFor="let q of questions">
+  <p>{{ q.question }}</p>
+
+  <button
+    *ngFor="let option of q.options"
+    [disabled]="q.answered"
+    (click)="onAnswer(q, option)"
+    [ngClass]="{
+      'correct': q.answered && option === q.reponse,
+      'wrong': q.answered && option !== q.reponse && option === q.userAnswer
+    }"
+    [ngStyle]="{
+      opacity: q.answered && option === q.userAnswer ? 0.6 : 1
+    }"
+  >
+    {{ option }}
+  </button>
+</div>
+
+<div class="scoreboard">
+  <p>Score: {{ score }}</p>
+  <p>Réponses correctes: {{ correct }}</p>
+  <p>Réponses incorrectes: {{ wrong }}</p>
+</div>

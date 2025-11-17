@@ -1,0 +1,22 @@
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.correct {
+  background-color: #4caf50; /* vert */
+  color: white;
+}
+
+.wrong {
+  background-color: #f44336; /* rouge */
+  color: white;
+}
+
+.scoreboard {
+  margin-top: 20px;
+  font-weight: bold;
+}
