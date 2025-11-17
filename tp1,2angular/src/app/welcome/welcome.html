@@ -1,0 +1,12 @@
+ <h2> Bienvenue sur cette premiere application Angular</h2>
+<!-- Interpolation -->
+<p>Utilisateur actuel : {{ username }}</p>
+<!-- Property binding -->
+<img [src]="imagePath" width="100" />
+<!-- Event binding -->
+<button (click)="onClick()">Dire bonjour</button>
+<!-- Two-way binding -->
+<div>
+<label>Changer de nom :</label>
+<input [(ngModel)]="username" />
+</div>
