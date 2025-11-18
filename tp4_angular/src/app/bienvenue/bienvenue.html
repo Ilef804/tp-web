@@ -1,0 +1,12 @@
+<div class="login-container">
+  <label for="name">Log In</label>
+
+  <input id="name"
+         type="text"
+         placeholder="Entrez votre nom"
+         [(ngModel)]="name">
+
+  <button (click)="logIn()">Log In</button>
+
+  <p *ngIf="isLoggedIn">Bienvenue, {{ name }} !</p>
+</div>

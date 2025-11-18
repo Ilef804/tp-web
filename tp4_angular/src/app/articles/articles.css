@@ -1,0 +1,53 @@
+.article-card {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Styles selon importance */
+.important {
+  background-color: #ffd6d6;
+  border-color: #ff4d4d;
+}
+
+.moyenne {
+  background-color: #fff3cd;
+  border-color: #ffc107;
+}
+
+.faible {
+  background-color: #d4edda;
+  border-color: #28a745;
+}
+
+.add-article {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-article input,
+.add-article textarea,
+.add-article select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  width: 100%;
+}
+
+.add-article button {
+  width: 150px;
+  padding: 8px;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-article button:hover {
+  background-color: #125a9c;
+}

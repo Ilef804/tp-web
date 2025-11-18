@@ -1,0 +1,12 @@
+<h2>Liste des produits</h2>
+
+<div *ngFor="let produit of produits" class="produit-card">
+  <h3>{{ produit.nom }}</h3>
+  
+  <p [ngStyle]="{'color': couleurStock(produit.stock)}">
+    Stock : {{ produit.stock }}
+  </p>
+
+  <!-- Input pour mettre à jour le stock -->
+  <input type="number" [(ngModel)]="produit.stock" min="0">
+</div>

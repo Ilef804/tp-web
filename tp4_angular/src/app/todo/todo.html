@@ -1,0 +1,32 @@
+<h2>Liste des tâches</h2>
+
+<!-- Formulaire pour ajouter une tâche -->
+<div class="add-tache">
+  <input type="text" placeholder="Nouvelle tâche" [(ngModel)]="nouvelleDescription">
+  <select [(ngModel)]="nouvellePriorite">
+    <option value="haute">Haute</option>
+    <option value="moyenne">Moyenne</option>
+    <option value="basse">Basse</option>
+  </select>
+  <button (click)="ajouterTache()">Ajouter</button>
+</div>
+
+<hr>
+
+<!-- Utilisation de *ngIf…else -->
+<div *ngIf="taches.length > 0; else pasDeTaches">
+  <div *ngFor="let tache of taches" class="tache-item">
+    <p [ngClass]="{'complete': tache.complete}" 
+       [ngStyle]="{'color': couleurPriorite(tache.priorite)}">
+      {{ tache.description }} ({{ tache.priorite }})
+    </p>
+    <button (click)="toggleComplete(tache)">
+      {{ tache.complete ? 'Marquer non complétée' : 'Marquer complétée' }}
+    </button>
+  </div>
+</div>
+
+<!-- Template ng-template pour message alternatif -->
+<ng-template #pasDeTaches>
+  <p class="empty-msg">Vous n'avez pas de tâches en cours.</p>
+</ng-template>
