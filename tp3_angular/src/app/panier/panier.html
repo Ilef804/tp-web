@@ -1,0 +1,20 @@
+<h2>Liste des produits</h2>
+
+<div class="produits-container">
+  <app-produit
+    [nomProduit]="'Ordinateur Portable'"
+    [prix]="2500"
+    (ajoutPanier)="onProduitAjoute($event)">
+  </app-produit>
+
+  <app-produit
+    [nomProduit]="'Souris Gamer'"
+    [prix]="120"
+    (ajoutPanier)="onProduitAjoute($event)">
+  </app-produit>
+</div>
+
+<p style="margin-top: 20px; color: green; font-weight: bold;">
+  {{ messagePanier }}
+</p>
+

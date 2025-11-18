@@ -1,0 +1,23 @@
+.en-stock {
+  color: green;
+  font-weight: bold;
+}
+
+.rupture {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  padding: 8px 14px;
+  margin-top: 8px;
+  border: none;
+  background-color: #1976d2;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}

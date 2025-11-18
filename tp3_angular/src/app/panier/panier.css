@@ -1,0 +1,8 @@
+.produits-container {
+  display: flex;
+  gap: 20px;      
+}
+
+app-produit {
+  flex: 1;        
+}
